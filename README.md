@@ -13,5 +13,5 @@
 ![project](https://puu.sh/IAvyA/0948939e4c.png)
 
 
-### Ca y est, vous avez à tous les outils du site ! 
+### Ca y est, vous avez accès à tous les outils du site ! 
 ![end](https://puu.sh/IAvyU/0cfe6f7dc4.png)
