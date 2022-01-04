@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+{%block content%}
+<div class="post_wrapper">
+    <div class="main-content">
+        <h1>Créer un ticket</h2>
+        <form class="forms" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input class="login-button" type="submit" value="Envoyer"></input>
+        </form>
+    </div>
+</div>
+{%endblock content%}
+

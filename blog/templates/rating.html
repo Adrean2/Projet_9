@@ -1,0 +1,25 @@
+<div class="stars">
+    <ul class="stars">
+        {%if post.rating == 5%}
+            <li>&#9733;</li>
+            <li>&#9733;</li>
+            <li>&#9733;</li>
+            <li>&#9733;</li>
+            <li>&#9733;</li>
+        {%elif post.rating == 4%}
+            <li>&#9733;</li>
+            <li>&#9733;</li>
+            <li>&#9733;</li>
+            <li>&#9733;</li>
+        {%elif post.rating == 3%}
+            <li>&#9733;</li>
+            <li>&#9733;</li>
+            <li>&#9733;</li>
+        {%elif post.rating == 2%}
+            <li>&#9733;</li>
+            <li>&#9733;</li>
+        {%else%}
+            <li>&#9733;</li>
+        {%endif%}
+    </ul>
+</div>

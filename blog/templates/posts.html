@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+{%block content%}
+<div class="post_wrapper">
+    <div class="main-content">
+        <div class="posts-container">
+            <h1>Vos tickets</h1>
+            {% for post in posts %}
+                {% if post.content_type == 'TICKET' %}
+                    {%if post.content_type == None %}
+                    <h1> Vous n'avez pas de ticket, créez en <a class="default_link" href="{%url 'create_ticket' %}"> un </a>!</h1>
+                    {%else%}
+                    {% include 'ticket.html' %}
+                    {%endif%}
+                {%endif%}
+            {% endfor %}
+            <h1>Vos reviews</h1>
+            {% for post in posts%}
+                {% if post.content_type == 'REVIEW' %}
+                    {% include 'review.html' %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    </div>
+</div>
+{%endblock content%}

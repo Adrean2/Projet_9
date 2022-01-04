@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+{%block content%}
+<div class="main-wrapper">
+
+    <div class="main-content">
+        <h1>Créer le ticket</h1>
+        <form class="forms" method="POST" enctype="multipart/form-data">
+            {{ticket_form.as_p}}
+        <h1>Créer la critique</h1>
+            {% csrf_token %}
+            {{review_form.as_p}}
+            <input class="login-button" type="submit" value="Envoyer"></input>
+        </form>
+    </div>
+</div>
+{%endblock content%}

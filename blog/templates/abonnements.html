@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+{% block content %}
+<div class="post_wrapper">
+    <div class="sub_container">
+        <div class="sub_content">
+            <h1>Suivre d'autres utilisateurs</h1>
+            <form class="search_bar" method="POST">
+                {%csrf_token%}
+                {{form}}
+                <input class="default-button" type="submit" value="Suivre">
+            </form>
+            {%if error is not Null%}
+            <p class=error>{{error}}</p>
+            {%endif%}
+        </div>
+        
+        <div class="sub_content">
+            <h1>Abonnements</h1>
+            <ul>
+            {% for following_user in following_users %}
+            <li class="abonnements_li">
+                <div class="abonnements_nickname">
+                    {{following_user.username}}
+                </div>
+            <a class="default-button" href="{% url 'unfollow' following_user.id %}">Se désabonner</a>
+            </li>
+                {%endfor%}
+            </ul>
+        </div>
+    
+        <div class="sub_content">
+            <h1>Abonnées</h1>
+            <ul>
+                {% for followed_user in followed_users%}
+                <li class="abonnements_li">
+                    <div class="following_nickname">{{followed_user.username}}</div>
+                </li>
+                {%endfor%}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock content %}

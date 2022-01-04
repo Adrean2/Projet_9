@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+{% block content%}
+<div class="page-wrapper">
+    <div class="signup-wrapper">
+        <h2>Inscrivez-vous</h2>
+            {% if form.errors %}
+            {% endif %}
+            <form class='stubborn' method=POST>
+                {{form.as_p}}
+                {% csrf_token %}
+                <a class="login-button" href="{% url 'login' %}">Retour</a>
+                <input class="login-button" type="submit" value="S'inscrire"></input>
+            </form>
+    </div>
+</div>
+{%endblock content%}

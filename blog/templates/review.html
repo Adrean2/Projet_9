@@ -1,0 +1,29 @@
+{%block content%}
+<div class="review_wrapper">
+    <div class="review">
+        <div class="review_content">
+            <div class="review_header">
+                {%if post.user == request.user%}
+                <div>Vous avez publié une critique</div> 
+                {%else%}
+                <div>{{post.user}} posted a review</div>
+                {%endif%}
+                <div>{{post.time_created}}</div>
+            </div>
+            <div class="review_title"> {{post.headline}} {%include "rating.html"%}</div>
+            <div class="review_desc">{{post.body}}</div>
+            <div class="within_ticket">
+                {%include 'ticket_within_review.html'%}
+            </div>
+        </div>
+        {%if user == post.user and clean_tickets is False %}
+        <div class="review_footer">
+            <div class="default_flex">
+                <a class="login-button ticket_button" href="{% url 'edit' post.id post.content_type%}">Modifier</a>
+                <a class="login-button ticket_button"href="{% url 'delete' post.id post.content_type %}">Supprimer</a>
+            </div>
+        </div>
+        {%endif%}
+    </div>
+</div>
+{%endblock %}

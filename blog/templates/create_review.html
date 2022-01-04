@@ -1,0 +1,16 @@
+{%extends 'base.html'%}
+{%block content%}
+<div class="post_wrapper">
+    <div class="main-content">
+        <div class="content">
+            <h2>Vous êtes en train de répondre à </h2>
+            {%include 'ticket.html'%}
+            <form class="forms" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{review_form.as_p}}
+                <input class="login-button" type="submit" value="Envoyer"></input>
+            </form>
+        </div>
+    </div>
+</div>
+{%endblock%}

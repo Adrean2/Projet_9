@@ -1,0 +1,36 @@
+{%block content%}
+<div class="ticket-wrapper">
+    <div class="ticket">
+        <div class="ticket_content">
+            <div class="ticket_header">
+                {%if user == post.user%}
+                <div>Vous avez demandé une critique</div>
+                {%else%}
+                <div>{{post.user}} a demandé une critique</div>
+                {%endif%}
+                <div class="ticket_time_created"> {{post.time_created}}</div>
+            </div>
+            <h3>{{post.title}}</h3>
+            <div class="ticket_description">{{post.description}}</div>
+            {%if user == post.user%}
+            <div class="ticket_footer">
+                <div class="ticket_buttons">
+                    <a class="login-button ticket_button" href="{% url 'edit' post.id post.content_type %}">Modifier</a>
+                    <a class="login-button ticket_button"href="{% url 'delete' post.id post.content_type %}">Supprimer</a>
+                </div>
+            </div>
+            {%else%}
+            {%if post.review is Null and clean_tickets is False%}
+            <div class="ticket_create">
+                <div class="ticket_buttons">
+                    <a class="login-button ticket_button" href="{% url 'create_review' post.id %}">Créer une critique</a>
+                </div>
+            </div>
+            {%endif%}
+            {%endif%}
+            
+        </div>
+        <img class="ticket_img" src="{{media_url}}{{post.image}}" alt="image_ticket">
+    </div>
+</div>
+{%endblock%}

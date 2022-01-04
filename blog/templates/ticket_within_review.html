@@ -1,0 +1,19 @@
+{%block content%}
+<div class="ticket-wrapper">
+    <div class="ticket">
+        <div class="ticket_content">
+            <div class="ticket_header">
+                {%if user == post.ticket.user%}
+                <div>Vous avez demandé une critique</div>
+                {%else%}
+                <div>{{post.ticket.user}} a demandé une critique</div>
+                {%endif%}
+                <div class="ticket_time_created"> {{post.ticket.time_created}}</div>
+            </div>
+            <h3>{{post.ticket.title}}</h3>
+            <div class="ticket_description">{{post.ticket.description}}</div>
+        </div>
+        <img class="ticket_img" src="{{media_url}}{{post.ticket.image}}" alt="image_ticket">
+    </div>
+</div>
+{%endblock%}
