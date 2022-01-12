@@ -95,6 +95,8 @@ def posts(request):
         key=lambda post: post.time_created, 
         reverse=True
         )
+    elif reviews is not None:
+        posts = reviews
     else:
         posts = tickets
     context={"posts":posts,"media_url":settings.MEDIA_URL}
