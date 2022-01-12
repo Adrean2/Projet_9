@@ -1,6 +1,10 @@
 # Projet_9
 
 ## Création de l'environnement virtuel
+### Pipenv
+Il faudra installer Pipenv sur votre machine afin de créer un environnement virtuel avec la commande: <br>
+```pip install pipenv```
+
 ### Tout d'abord, placez-vous dans le répertoire LITreview puis activez l'environnement virtuelle avec :<br> ```pipenv shell```
 ![pipenvshell](https://puu.sh/IAuoL/17e98ac841.png)<br>
 
